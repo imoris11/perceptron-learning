@@ -13,6 +13,7 @@ def accuracy(y_true, y_pred):
 def _unit_step_func(x):
     return np.where(x>=0, 1, -1)
 
+#find weights and position of elements for 2D data
 def find_weights(X):
     n_samples, n_features = X.shape
     weights = [0.01, 0.2]
@@ -24,7 +25,8 @@ def find_weights(X):
         y.append(y_predicted)
     return y, weights
 
-X , y = datasets.make_blobs(n_samples=1000, n_features=10, centers=2, cluster_std=1.05, random_state=123)
+#generate randomly generated linear separable datasets 
+X , y = datasets.make_blobs(n_samples=1000, n_features=10, centers=2, cluster_std=1.05, random_state=12)
 
 # y, weights = find_weights(X)
     
